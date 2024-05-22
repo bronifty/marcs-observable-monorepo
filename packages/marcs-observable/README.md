@@ -1,7 +1,25 @@
+# marcs-observable
+
+bronifty@gmail.com
+
+### Description
+
+This package is a typescript replica of @marc1's observablish-values package used on the frontend masters website for the media player.
+
+### Usage
+
+**Install Package**
+
+```sh
+pnpm add @bronifty/marcs-observable
+```
+
+**Code Example**
+
+```tsx
 import React from "react";
-// pnpm add marcs-observable
-import marcsObservable from "marcs-observable";
-// import marcsObservable from "@bronifty/marcs-observable";
+// import { Observable, ObservableFactory } from "marcs-observable";
+import marcsObservable from "@bronifty/marcs-observable";
 
 // creating observables outside of the component in order to preserve state when component re-renders
 // this could also be done in a store and inported
@@ -32,3 +50,4 @@ const App = () => {
 };
 
 export default App;
+```
