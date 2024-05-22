@@ -175,3 +175,10 @@ export class ObservableFactory {
     return new Observable(initialValue, ...args);
   }
 }
+
+export default function marcsObservable(
+  initialValue: any,
+  ...args: any[]
+): IObservable {
+  return new Observable(initialValue, ...args);
+}

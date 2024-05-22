@@ -1,10 +1,11 @@
 import React from "react";
-import { Observable, ObservableFactory } from "marcs-observable";
+// import { Observable, ObservableFactory } from "marcs-observable";
+import * as mod from "@bronifty/marcs-observable";
 
 // creating observables outside of the component in order to preserve state when component re-renders
 // this could also be done in a store and inported
-const child = ObservableFactory.create(() => 1);
-const parent = new Observable(() => child.value + 1);
+const child = mod.ObservableFactory.create(() => 1);
+const parent = new mod.Observable(() => child.value + 1);
 
 const App = () => {
   const [input1, setInput1] = React.useState(1);
