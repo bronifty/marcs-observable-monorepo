@@ -2,6 +2,9 @@ import React from "react";
 import { isBlank } from "common";
 import { add, sub } from "ts-lib";
 import { Observable, ObservableFactory } from "marcs-observable";
+
+// creating observables outside of the component in order to preserve state when component re-renders
+// this could also be done in a store and inported
 const child = ObservableFactory.create(() => 1);
 const parent = new Observable(() => child.value + 1);
 
