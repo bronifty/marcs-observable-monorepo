@@ -1,10 +1,14 @@
 import React from "react";
 import { isBlank } from "common";
 import { add, sub } from "ts-lib";
+import { DescendantsGrandParent } from "./DescendantsGrandParent";
+import { DescendantsParent } from "./DescendantsParent";
+import { DescendantsChild } from "./DescendantsChild";
 
 const App = () => {
-  const [input1, setInput1] = React.useState(4);
-  const [input2, setInput2] = React.useState(3);
+  const [input1, setInput1] = React.useState(1);
+  const [input2, setInput2] = React.useState(2);
+
   return (
     <>
       <section>
@@ -35,6 +39,12 @@ const App = () => {
 
         <p>add {add(input1, input2)}</p>
         <p>sub {sub(input1, input2)}</p>
+      </section>
+      <section>
+        <h1>test 3 - marcs-observable</h1>
+        <DescendantsChild />
+        <DescendantsParent />
+        <DescendantsGrandParent />
       </section>
     </>
   );
