@@ -175,7 +175,7 @@ export class ObservableFactory {
     return new Observable(initialValue, ...args);
   }
 }
-
+/** marcsObservable is the default export */
 export default function marcsObservable(
   initialValue: any,
   ...args: any[]
