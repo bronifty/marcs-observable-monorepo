@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "common": "pnpm --filter common",
-    "app": "pnpm --filter web-app",
+    "web-app": "pnpm --filter web-app",
     "ts-lib": "pnpm --filter ts-lib",
     "vanilla-ts-web-app": "pnpm --filter vanilla-ts-web-app",
     "clean": "rm -rf node_modules packages/**/node_modules packages/**/build packages/**/dist"
