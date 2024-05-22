@@ -1,5 +1,12 @@
 #PNPM monorepo for marcs-observable
 
+# Description
+
+Monorepo for building and testing the marcs-observable package, which pushes to jsr.io natively and then is brought down and re-published to npm based on whatever shows up in the node_modules folder when the jsr.io package is installed
+
+- https://jsr.io/@bronifty/marcs-observable
+- https://www.npmjs.com/package/marcs-observable?activeTab=code
+
 ### Setup
 
 - web-app is to test the functionality of the package
