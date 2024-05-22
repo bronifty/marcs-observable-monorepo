@@ -49,7 +49,7 @@ export class Observable implements IObservable {
       this._value = init;
     }
   }
-  get value() {
+  get value(): any {
     if (
       Observable._computeActive &&
       Observable._computeActive !== (this as IObservable) &&
@@ -59,7 +59,7 @@ export class Observable implements IObservable {
     }
     return this._value;
   }
-  set value(newVal) {
+  set value(newVal: any) {
     this._previousValue = this._value;
     if (newVal instanceof Promise) {
       this._generationCounter += 1;
@@ -94,7 +94,7 @@ export class Observable implements IObservable {
       this.publish();
     }
   }
-  subscribe = (handler: Function, signal: AbortSignal) => {
+  subscribe = (handler: Function, signal: AbortSignal): (() => void) => {
     if (signal) {
       const abortHandler = () => {
         unsubscribe();
@@ -119,7 +119,7 @@ export class Observable implements IObservable {
       handler(this._value, this._previousValue);
     }
   };
-  computeHandler = () => {
+  computeHandler = (): any => {
     return this.compute();
   };
   compute = () => {
@@ -160,12 +160,12 @@ export class Observable implements IObservable {
       throw new Error("Push can only be called on an observable array.");
     }
   };
-  static delay(ms: number) {
+  static delay(ms: number): any {
     let timeoutId: ReturnType<typeof setTimeout>;
     const promise = new Promise((resolve) => {
       timeoutId = setTimeout(resolve, ms);
     });
-    const clear = () => clearTimeout(timeoutId);
+    const clear = (): void => clearTimeout(timeoutId);
     return { promise, clear };
   }
 }
