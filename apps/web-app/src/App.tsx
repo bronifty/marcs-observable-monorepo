@@ -4,23 +4,17 @@ import { add, sub } from "ts-lib";
 import { Observable, ObservableFactory } from "marcs-observable";
 const child = ObservableFactory.create(() => 1);
 const parent = new Observable(() => child.value + 1);
-// import { DescendantsGrandParent } from "./DescendantsGrandParent";
-// import { DescendantsParent } from "./DescendantsParent";
-// import { DescendantsChild } from "./DescendantsChild";
 
 const App = () => {
   const [input1, setInput1] = React.useState(1);
   const [input2, setInput2] = React.useState(2);
-  const [childValue, setChildValue] = React.useState(child.value);
-  // const [parentValue, setParentValue] = React.useState(parent.value);
+  const [_, setChildValue] = React.useState(child.value);
 
+  // useEffect to trigger a re-render when the child observable changes
   React.useEffect(() => {
     const childSubscription = child.subscribe((value) => setChildValue(value));
-    // const parentSubscription = parent.subscribe(setParentValue);
-
     return () => {
       childSubscription();
-      // parentSubscription();
     };
   }, []);
 
