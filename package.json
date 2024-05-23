@@ -10,7 +10,7 @@
     "clean": "rm -rf node_modules packages/**/node_modules packages/**/build packages/**/dist apps/**/node_modules",
     "test": "pnpm --filter marcs-observable test",
     "web-app": "pnpm --filter web-app",
-    "marcs-observable": "pnpm --filter marcs-observable"
+    "marcs-observable": "pnpm --filter @bronifty/marcs-observable"
   },
   "keywords": [],
   "author": "",
