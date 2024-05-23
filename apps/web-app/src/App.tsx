@@ -1,33 +1,28 @@
 import React from "react";
-// pnpm add marcs-observable
-import marcsObservable, { ObservableFactory } from "marcs-observable";
-// import marcsObservable from "@bronifty/marcs-observable";
+import Observable from "marcs-observable";
 
-// creating observables outside of the component in order to preserve state when component re-renders
-// this could also be done in a store and inported
-const child = marcsObservable(() => 1);
-const parent = marcsObservable(() => child.value + 1);
-const [getChildState, setChildState] = ObservableFactory.useState(0);
-const [getParentState, setParentState] = ObservableFactory.useState(0);
+// declaring our observable state outside the component to maintain state across re-renders; this could also be done in a store and imported
+const [getter, setter, subscriber] = Observable.useState(0);
+let count = 0;
+const unsub = subscriber(() => count++);
 
 const App = () => {
-  const [_, setChildValue] = React.useState(child.value);
-
-  // useEffect to trigger a re-render when the child observable changes
-  React.useEffect(() => {
-    const childSubscription = child.subscribe((value) => setChildValue(value));
-    return () => {
-      childSubscription();
-    };
-  }, []);
+  // using a controlled input via React.useState in order to hook into the component lifecycle and get a view update when the input value changes
+  const [input1, setInput1] = React.useState(0);
+  const handleInputChange = (e: any) => {
+    const newValue = e.target.value;
+    setInput1(newValue); // Update local React state
+    setter(newValue); // Update observable state
+  };
 
   return (
     <>
       <section>
-        <h1>test 3 - marcs-observable</h1>
-        <p>child.value - {child.value}</p>
-        <p>parent.value - {parent.value}</p>
-        <button onClick={() => (child.value += 1)}>child.value += 1</button>
+        <h2>numeric input</h2>
+        <input type="number" value={input1} onChange={handleInputChange} />
+        <p>observable value (getter()): {getter()}</p>
+        <p>observed value (count): {count}</p>
+        <button onClick={() => unsub()}>unsubscribe</button>
       </section>
     </>
   );
