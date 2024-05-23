@@ -1,4 +1,8 @@
-import { ObservableFactory } from "./main.ts";
+import ObservableFactory from "./main.ts";
+
+const logChanges = (current: any, previous: any) => {
+  console.log(`Changed to ${current} from ${previous}`);
+};
 
 describe("Observable Tests", () => {
   it("Observable publish and subscribe", () => {
@@ -64,9 +68,6 @@ describe("Observable Tests", () => {
   });
 
   it("Overwrite computed observable value without changing computed function", () => {
-    const logChanges = (current: any, previous: any) => {
-      console.log(`Changed to ${current} from ${previous}`);
-    };
     const i = ObservableFactory.create(1);
     const j = ObservableFactory.create(10);
     const func = () => i.value;
@@ -172,20 +173,21 @@ describe("Observable subscribe and unsubscribe with AbortSignal", () => {
 
 describe("ObservableFactory.useState", () => {
   it("should use a tuple to return a getter setter and subscriber", async () => {
-    const [getter, setter, subscriber] = ObservableFactory.useState(0);
+    const [getter, setter, subscriber] = ObservableFactory.useState([]);
 
-    // Example usage of the observable state
-    let previousValue: any = null; // Initialize a variable to hold the previous value
-    const unsubscribe = subscriber((current: any) => {
-      console.log(`Changed to ${current} from ${previousValue}`);
-      previousValue = current; // Update the previous value after logging
-    });
+    // const observable = ObservableFactory.create([]);
+    let count = 0;
+    subscriber(() => count++);
+    const arr = [1, 2];
+    setter(arr);
 
-    console.log("Initial State:", getter());
-    expect(getter()).toBe(0);
-    setter(10);
-    console.log("Updated State:", getter());
-    expect(getter()).toBe(10);
-    unsubscribe();
+    arr.push(3);
+    setter([1, 2, 3]);
+    expect(count).toBe(2);
+    arr.push(4);
+    expect(count).toBe(2);
+    setter([1, 2, 3, 4]);
+    expect(count).toBe(3);
+    expect(getter()).toEqual([1, 2, 3, 4]);
   });
 });

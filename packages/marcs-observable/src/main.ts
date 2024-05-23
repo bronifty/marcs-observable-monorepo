@@ -171,6 +171,7 @@ export class Observable implements IObservable {
 }
 
 interface IObservableFactory {
+  create?(initialValue: any, ...args: any[]): IObservable;
   useState?: (
     initialValue: any
   ) => [
@@ -184,39 +185,31 @@ interface IObservableFactory {
   ];
 }
 
-export class ObservableFactory implements IObservableFactory {
+export default class ObservableFactory implements IObservableFactory {
   static create(initialValue: any, ...args: any[]): IObservable {
     return new Observable(initialValue, ...args);
   }
-  static useState<T>(
-    initialValue: T
+  static useState(
+    initialValue: any,
+    ...args: any[]
   ): [
-    () => T,
-    (newValue: T) => void,
-    (callback: (value: T) => void) => () => void
+    () => any,
+    (newValue: any) => void,
+    (callback: (value: any) => void) => () => void
   ] {
-    let value = initialValue;
-    let listeners = new Set<(value: T) => void>();
+    const observable = ObservableFactory.create(initialValue, ...args);
 
     return [
-      () => value, // getter
-      (newValue: T) => {
-        // setter
-        value = newValue;
-        listeners.forEach((listener) => listener(value));
+      () => observable.value, // getter
+      (newValue: any) => {
+        observable.value = newValue; // setter
       },
-      (callback: (value: T) => void) => {
-        // subscriber
-        listeners.add(callback);
-        return () => listeners.delete(callback); // returns the unsubscribe function
+      (
+        handler: (current: any, previous: any) => void,
+        signal?: AbortSignal
+      ) => {
+        return observable.subscribe(handler, signal); // subscribe with signal and return the unsubscribe function
       },
     ];
   }
-}
-/** marcsObservable is the default export */
-export default function marcsObservable(
-  initialValue: any,
-  ...args: any[]
-): IObservable {
-  return new Observable(initialValue, ...args);
 }
