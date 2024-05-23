@@ -193,17 +193,10 @@ describe("ObservableFactory.useState", () => {
 });
 
 it("Observable with useState recomputes value when child observables change", () => {
-  const [
-    childObservableGetter,
-    childObservableSetter,
-    childObservableSubscriber,
-  ] = ObservableFactory.useState(5);
+  const [childObservableGetter, childObservableSetter] =
+    ObservableFactory.useState(5);
   const func = () => childObservableGetter() * 2;
-  const [
-    parentObservableGetter,
-    parentObservableSetter,
-    parentObservableSubscriber,
-  ] = ObservableFactory.useState(func);
+  const [parentObservableGetter] = ObservableFactory.useState(func);
   expect(parentObservableGetter()).toBe(10);
   childObservableSetter(10);
   expect(parentObservableGetter()).toBe(20);

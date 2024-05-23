@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm --filter web-app dev",
+    "dev": "pnpm --filter web dev",
     "build": "pnpm --filter marcs-observable build",
     "start": "pnpm -r --parallel start",
     "clean": "rm -rf node_modules packages/**/node_modules packages/**/build packages/**/dist apps/**/node_modules",
     "test": "pnpm --filter marcs-observable test",
-    "web-app": "pnpm --filter web-app",
+    "web": "pnpm --filter web",
     "marcs-observable": "pnpm --filter @bronifty/marcs-observable"
   },
   "keywords": [],
