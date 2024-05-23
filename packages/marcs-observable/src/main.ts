@@ -94,7 +94,7 @@ export class Observable implements IObservable {
       this.publish();
     }
   }
-  subscribe = (handler: Function, signal: AbortSignal): (() => void) => {
+  subscribe = (handler: Function, signal?: AbortSignal): (() => void) => {
     if (signal) {
       const abortHandler = () => {
         unsubscribe();
@@ -170,9 +170,47 @@ export class Observable implements IObservable {
   }
 }
 
-export class ObservableFactory {
+interface IObservableFactory {
+  useState?: (
+    initialValue: any
+  ) => [
+    () => any,
+    (newValue: any) => void,
+    (callback: (newValue: any) => void) => void,
+    (
+      handler: (current: any, previous: any) => void,
+      signal?: AbortSignal
+    ) => () => void
+  ];
+}
+
+export class ObservableFactory implements IObservableFactory {
   static create(initialValue: any, ...args: any[]): IObservable {
     return new Observable(initialValue, ...args);
+  }
+  static useState<T>(
+    initialValue: T
+  ): [
+    () => T,
+    (newValue: T) => void,
+    (callback: (value: T) => void) => () => void
+  ] {
+    let value = initialValue;
+    let listeners = new Set<(value: T) => void>();
+
+    return [
+      () => value, // getter
+      (newValue: T) => {
+        // setter
+        value = newValue;
+        listeners.forEach((listener) => listener(value));
+      },
+      (callback: (value: T) => void) => {
+        // subscriber
+        listeners.add(callback);
+        return () => listeners.delete(callback); // returns the unsubscribe function
+      },
+    ];
   }
 }
 /** marcsObservable is the default export */

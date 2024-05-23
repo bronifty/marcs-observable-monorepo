@@ -14,7 +14,15 @@ This package is a typescript replica of @marc1's observablish-values package use
 pnpm add @bronifty/marcs-observable
 ```
 
-**Code Example**
+**Code Examples**
+
+1. useState factory
+
+```tsx
+
+```
+
+2. default export
 
 ```tsx
 import React from "react";

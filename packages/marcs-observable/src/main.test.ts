@@ -167,3 +167,25 @@ describe("Observable subscribe and unsubscribe with AbortSignal", () => {
     expect(observable2Value).toBe("World");
   });
 });
+
+// use the useState function to create a state variable that is observable
+
+describe("ObservableFactory.useState", () => {
+  it("should use a tuple to return a getter setter and subscriber", async () => {
+    const [getter, setter, subscriber] = ObservableFactory.useState(0);
+
+    // Example usage of the observable state
+    let previousValue: any = null; // Initialize a variable to hold the previous value
+    const unsubscribe = subscriber((current: any) => {
+      console.log(`Changed to ${current} from ${previousValue}`);
+      previousValue = current; // Update the previous value after logging
+    });
+
+    console.log("Initial State:", getter());
+    expect(getter()).toBe(0);
+    setter(10);
+    console.log("Updated State:", getter());
+    expect(getter()).toBe(10);
+    unsubscribe();
+  });
+});
