@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@bronifty/marcs-observable": "^1.0.7",
+    "@bronifty/marcs-observable": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
