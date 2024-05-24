@@ -9,7 +9,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "npm:publish": " npm publish --access public",
+    "jsr:publish": "npx jsr publish",
+    "publish": "pnpm npm:publish && pnpm jsr:publish"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
