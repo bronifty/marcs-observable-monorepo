@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx build @bronifty/marcs-observable",
+    "startTime": "2024-05-24T22:52:21.652Z",
+    "endTime": "2024-05-24T22:52:29.850Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "@bronifty/marcs-observable:build",
+      "target": "build",
+      "projectName": "@bronifty/marcs-observable",
+      "hash": "4090712053980947374",
+      "startTime": "2024-05-24T22:52:21.668Z",
+      "endTime": "2024-05-24T22:52:29.850Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    }
+  ]
+}

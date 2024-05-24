@@ -83,9 +83,8 @@ pnpm clean
 
 ### References
 
-- https://jsr.io/@bronifty/marcs-observable
 - https://www.npmjs.com/package/@bronifty/marcs-observable
+- https://jsr.io/@bronifty/marcs-observable
 - https://dev.to/vinomanick/create-a-monorepo-using-pnpm-workspace-1ebn
 - https://blog.nrwl.io/setup-a-monorepo-with-pnpm-workspaces-and-speed-it-up-with-nx-bc5d97258a7e
-- https://jsr.io/@bronifty/marcs-observable/publish
 - https://www.youtube.com/watch?v=MFCn4ce5dVc
