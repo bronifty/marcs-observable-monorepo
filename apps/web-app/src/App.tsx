@@ -10,13 +10,13 @@ const [
 const [parentObservableGetter] = MarcsObservable.useState(
   () => childObservableGetter() * 2
 );
-let unsubscribe: any = undefined;
+let unsubscribe = () => {};
 
 const App = () => {
   // subscribing react hook for ui update to observable value update inside a useEffect so it runs once on mount and doesn't get re-assigned every re-render
   const [input1, setInput1] = React.useState(childObservableGetter());
   React.useEffect(() => {
-    unsubscribe = childObservableSubscriber((newVal) => {
+    unsubscribe = childObservableSubscriber((newVal: any) => {
       setInput1(newVal);
     });
     return () => {
@@ -25,8 +25,6 @@ const App = () => {
   }, []); // Empty dependency array ensures this effect runs only once on mount
 
   const handleInputChange = (e: any) => {
-    // const newValue = e.target.value;
-    // setInput1(newValue); // Update local React state
     childObservableSetter(e.target.value); // Update observable state
   };
 
@@ -43,7 +41,6 @@ const App = () => {
           parentObservableGetter value (parentObservableGetter()):{" "}
           {parentObservableGetter()}
         </p>
-
         <button onClick={unsubscribe}>unsubscribe from ui updates</button>
       </section>
     </>

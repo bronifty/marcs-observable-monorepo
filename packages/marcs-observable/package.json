@@ -1,7 +1,7 @@
 {
   "name": "@bronifty/marcs-observable",
   "description": "bronifty@gmail.com",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "type": "module",
   "main": "./dist/marcs-observable.js",
   "types": "./dist/main.d.ts",
