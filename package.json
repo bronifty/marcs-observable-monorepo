@@ -7,7 +7,7 @@
     "dev": "pnpm --filter web dev",
     "build": "pnpm --filter marcs-observable build",
     "start": "pnpm -r --parallel start",
-    "clean": "rm -rf node_modules packages/**/node_modules packages/**/build packages/**/dist apps/**/node_modules",
+    "clean": "rm -rf node_modules packages/**/node_modules packages/**/build packages/**/dist apps/**/node_modules apps/**/dist",
     "test": "pnpm --filter marcs-observable test",
     "web": "pnpm --filter web",
     "marcs-observable": "pnpm --filter @bronifty/marcs-observable",
