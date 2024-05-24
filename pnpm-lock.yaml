@@ -11,8 +11,8 @@ importers:
   apps/web:
     dependencies:
       '@bronifty/marcs-observable':
-        specifier: ^1.1.4
-        version: 1.1.4
+        specifier: workspace:*
+        version: link:../../packages/marcs-observable
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -180,9 +180,6 @@ packages:
   '@babel/types@7.24.5':
     resolution: {integrity: sha512-6mQNsaLeXTw0nxYUYu+NSa4Hx4BlF1x1x8/PMFbiR+GBSr+2DkECc69b8hgy2frEodNcvPffeH8YfWd3LI6jhQ==}
     engines: {node: '>=6.9.0'}
-
-  '@bronifty/marcs-observable@1.1.4':
-    resolution: {integrity: sha512-hFBJ7GHxY0blDNpfoaywcRtOYdT+GRfQgtBGuWc/7KuAGopESJ0DjcPSPBBClSoBlDe2lewNYFkOpb1XL3ZK1Q==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -1777,8 +1774,6 @@ snapshots:
       '@babel/helper-string-parser': 7.24.1
       '@babel/helper-validator-identifier': 7.24.5
       to-fast-properties: 2.0.0
-
-  '@bronifty/marcs-observable@1.1.4': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
