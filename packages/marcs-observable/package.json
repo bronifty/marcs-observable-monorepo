@@ -1,10 +1,16 @@
 {
   "name": "@bronifty/marcs-observable",
   "description": "bronifty@gmail.com",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
   "main": "./dist/marcs-observable.js",
   "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/marcs-observable.js",
+      "types": "./dist/main.d.ts"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
