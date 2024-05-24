@@ -1,6 +1,8 @@
 #PNPM monorepo for marcs-observable
 
-# Description
+### Description
+
+This package is a typescript replica of [@1marc's](https://x.com/1Marc) observablish-values package used on the frontend masters website for the media player.
 
 Monorepo for marcs-observable; under construction; should push to jsr.io upstream and then downstream to npm with the same namespace (@bronifty/marcs-observable)
 
@@ -80,8 +82,7 @@ pnpm clean
 ### References
 
 - https://jsr.io/@bronifty/marcs-observable
-- https://www.npmjs.com/package/marcs-observable?activeTab=code
-
+- https://www.npmjs.com/package/@bronifty/marcs-observable
 - https://dev.to/vinomanick/create-a-monorepo-using-pnpm-workspace-1ebn
 - https://blog.nrwl.io/setup-a-monorepo-with-pnpm-workspaces-and-speed-it-up-with-nx-bc5d97258a7e
 - https://jsr.io/@bronifty/marcs-observable/publish
