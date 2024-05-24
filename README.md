@@ -1,5 +1,6 @@
 #PNPM monorepo for marcs-observable
-[@bronifty/marcs-observable](https://www.npmjs.com/package/@bronifty/marcs-observable)
+
+- [@bronifty/marcs-observable](https://www.npmjs.com/package/@bronifty/marcs-observable)
 
 ### Description
 

@@ -1,7 +1,7 @@
 # marcs-observable
 
-[@bronifty/marcs-observable](https://www.npmjs.com/package/@bronifty/marcs-observable)
-bronifty@gmail.com
+- [@bronifty/marcs-observable](https://www.npmjs.com/package/@bronifty/marcs-observable)
+  bronifty@gmail.com
 
 ### Description
 
