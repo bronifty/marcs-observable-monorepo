@@ -1,13 +1,13 @@
 import React from "react";
-import ObservableFactory from "@bronifty/marcs-observable";
+import MarcsObservable from "@bronifty/marcs-observable";
 
 // declaring our observable state outside the component to maintain state across re-renders; this could also be done in a store and imported
 const [
   childObservableGetter,
   childObservableSetter,
   childObservableSubscriber,
-] = ObservableFactory.useState(0);
-const [parentObservableGetter] = ObservableFactory.useState(
+] = MarcsObservable.useState(0);
+const [parentObservableGetter] = MarcsObservable.useState(
   () => childObservableGetter() * 2
 );
 let unsubscribe: any = undefined;

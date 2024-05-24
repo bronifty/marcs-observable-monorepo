@@ -10,29 +10,35 @@ The updated api from the default export is similar to React.useState which retur
 
 ```tsx
 import React from "react";
-import ObservableFactory from "@bronifty/marcs-observable";
+import MarcsObservable from "@bronifty/marcs-observable";
 
 // declaring our observable state outside the component to maintain state across re-renders; this could also be done in a store and imported
 const [
   childObservableGetter,
   childObservableSetter,
   childObservableSubscriber,
-] = ObservableFactory.useState(5);
-const func = () => childObservableGetter() * 2;
-const [parentObservableGetter] = ObservableFactory.useState(func);
-// expect(parentObservableGetter()).toBe(10);
-childObservableSetter(10);
-// expect(parentObservableGetter()).toBe(20);
-let count = 0;
-const unsub = childObservableSubscriber(() => count++);
+] = MarcsObservable.useState(0);
+const [parentObservableGetter] = MarcsObservable.useState(
+  () => childObservableGetter() * 2
+);
+let unsubscribe: any = undefined;
 
 const App = () => {
-  // using a controlled input via React.useState in order to hook into the component lifecycle and get a view update when the input value changes
-  const [input1, setInput1] = React.useState(0);
+  // subscribing react hook for ui update to observable value update inside a useEffect so it runs once on mount and doesn't get re-assigned every re-render
+  const [input1, setInput1] = React.useState(childObservableGetter());
+  React.useEffect(() => {
+    unsubscribe = childObservableSubscriber((newVal) => {
+      setInput1(newVal);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []); // Empty dependency array ensures this effect runs only once on mount
+
   const handleInputChange = (e: any) => {
-    const newValue = e.target.value;
-    setInput1(newValue); // Update local React state
-    childObservableSetter(newValue); // Update observable state
+    // const newValue = e.target.value;
+    // setInput1(newValue); // Update local React state
+    childObservableSetter(e.target.value); // Update observable state
   };
 
   return (
@@ -48,8 +54,8 @@ const App = () => {
           parentObservableGetter value (parentObservableGetter()):{" "}
           {parentObservableGetter()}
         </p>
-        <p>observed value (count): {count}</p>
-        <button onClick={() => unsub()}>unsubscribe</button>
+
+        <button onClick={unsubscribe}>unsubscribe from ui updates</button>
       </section>
     </>
   );
