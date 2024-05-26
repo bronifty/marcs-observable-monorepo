@@ -1,4 +1,4 @@
-#PNPM monorepo for marcs-observable
+#PNPM monorepo for marcs-observable with Nx
 
 - [@bronifty/marcs-observable](https://www.npmjs.com/package/@bronifty/marcs-observable)
 
@@ -6,7 +6,7 @@
 
 This package is a typescript replica of [@1marc's](https://x.com/1Marc) observablish-values package used on the frontend masters website for the media player.
 
-Monorepo for marcs-observable; under construction; should push to jsr.io upstream and then downstream to npm with the same namespace (@bronifty/marcs-observable)
+Monorepo for marcs-observable. Enhanced with nx.
 
 The updated api from the default export is similar to React.useState which returns a getter, setter and subscriber tuple. We still need to hook into React lifecycle hooks to get a component tree branch update...
 
@@ -80,6 +80,34 @@ pnpm dev
 pnpm test
 pnpm clean
 ```
+
+### Quick intro to Nx
+
+- whereas with pnpm you filter the command for the project, with nx you run the command and specify the project
+
+```sh
+ npx nx <target> <project>
+```
+
+target is the NPM script in this specific case you want to execute.
+
+### Sample Nx Commands
+
+- dev is the package.json script in the web project
+
+```sh
+npx nx dev web
+npx nx test @bronifty/marcs-observable
+```
+
+- run commands in parallel
+
+```sh
+npx nx run-many --target=build --all
+npx nx run-many --target=build --projects=@bronifty/marcs-observable,web
+```
+
+> Note I’m prefixing the commands with npx which runs the Nx executable in the node_modules folder. In this way I don't have to install nx globally. If you prefer doing that, feel free to do so.
 
 ### References
 

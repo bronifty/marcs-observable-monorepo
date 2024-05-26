@@ -1,20 +1,20 @@
 {
   "run": {
-    "command": "nx build @bronifty/marcs-observable",
-    "startTime": "2024-05-24T22:52:21.652Z",
-    "endTime": "2024-05-24T22:52:29.850Z",
+    "command": "nx test @bronifty/marcs-observable",
+    "startTime": "2024-05-26T18:17:01.703Z",
+    "endTime": "2024-05-26T18:17:01.917Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "@bronifty/marcs-observable:build",
-      "target": "build",
+      "taskId": "@bronifty/marcs-observable:test",
+      "target": "test",
       "projectName": "@bronifty/marcs-observable",
-      "hash": "4090712053980947374",
-      "startTime": "2024-05-24T22:52:21.668Z",
-      "endTime": "2024-05-24T22:52:29.850Z",
+      "hash": "14769058974795281209",
+      "startTime": "2024-05-26T18:17:01.718Z",
+      "endTime": "2024-05-26T18:17:01.778Z",
       "params": "",
-      "cacheStatus": "cache-miss",
+      "cacheStatus": "local-cache-hit",
       "status": 0
     }
   ]

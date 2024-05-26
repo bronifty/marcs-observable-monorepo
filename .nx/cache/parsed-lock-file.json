@@ -5040,6 +5040,15 @@
         "hash": "sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw=="
       }
     },
+    "npm:react-dom@19.0.0-rc-f994737d14-20240522": {
+      "type": "npm",
+      "name": "npm:react-dom@19.0.0-rc-f994737d14-20240522",
+      "data": {
+        "version": "react-dom@19.0.0-rc-f994737d14-20240522",
+        "packageName": "react-dom@19.0.0-rc-f994737d14-20240522",
+        "hash": "sha512-J4CsfTSptPKkhaPbaR6n/KohQiHZTrRZ8GL4H8rbAqN/Qpy69g2MIoLBr5/PUX21ye6JxC1ZRWJFna7Xdg1pdA=="
+      }
+    },
     "npm:react-is@18.3.1": {
       "type": "npm",
       "name": "npm:react-is@18.3.1",
@@ -5065,6 +5074,15 @@
         "version": "react@18.3.1",
         "packageName": "react@18.3.1",
         "hash": "sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ=="
+      }
+    },
+    "npm:react@19.0.0-rc-f994737d14-20240522": {
+      "type": "npm",
+      "name": "npm:react@19.0.0-rc-f994737d14-20240522",
+      "data": {
+        "version": "react@19.0.0-rc-f994737d14-20240522",
+        "packageName": "react@19.0.0-rc-f994737d14-20240522",
+        "hash": "sha512-SeU2v5Xy6FotVhKz0pMS2gvYP7HlkF0qgTskj3JzA1vlxcb3dQjxlm9t0ZlJqcgoyI3VFAw7bomuDMdgy1nBuw=="
       }
     },
     "npm:readable-stream@2.3.8": {
@@ -5245,6 +5263,15 @@
         "version": "scheduler@0.23.2",
         "packageName": "scheduler@0.23.2",
         "hash": "sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ=="
+      }
+    },
+    "npm:scheduler@0.25.0-rc-f994737d14-20240522": {
+      "type": "npm",
+      "name": "npm:scheduler@0.25.0-rc-f994737d14-20240522",
+      "data": {
+        "version": "scheduler@0.25.0-rc-f994737d14-20240522",
+        "packageName": "scheduler@0.25.0-rc-f994737d14-20240522",
+        "hash": "sha512-qS+xGFF7AljP2APO2iJe8zESNsK20k25MACz+WGOXPybUsRdi1ssvaoF93im2nSX2q/XT3wKkjdz6RQfbmaxdw=="
       }
     },
     "npm:schema-utils@3.3.0": {

@@ -7,7 +7,148 @@
   "pathMappings": {},
   "nxJsonPlugins": [],
   "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "README.md",
+        "hash": "7927655594969401475"
+      },
+      {
+        "file": ".npmrc",
+        "hash": "15788482085624604926"
+      },
+      {
+        "file": "nx.json",
+        "hash": "6288411810046565348"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "13978643129393047736"
+      },
+      {
+        "file": "package.json",
+        "hash": "3317919457956704386"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "1315709261130366513"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "9750177317466281158"
+      }
+    ],
     "projectFileMap": {
+      "remote": [
+        {
+          "file": "apps/remote/.babelrc",
+          "hash": "8268513642698859463"
+        },
+        {
+          "file": "apps/remote/.gitignore",
+          "hash": "11904718991324175022"
+        },
+        {
+          "file": "apps/remote/package.json",
+          "hash": "3014260525062224209",
+          "deps": [
+            "@bronifty/marcs-observable"
+          ]
+        },
+        {
+          "file": "apps/remote/pnpm-lock.yaml",
+          "hash": "9511287153664696371"
+        },
+        {
+          "file": "apps/remote/rspack.config.js",
+          "hash": "10121962236778617115"
+        },
+        {
+          "file": "apps/remote/src/App.jsx",
+          "hash": "8603818085874879049"
+        },
+        {
+          "file": "apps/remote/src/RemoteCounter.jsx",
+          "hash": "16274637873788493305"
+        },
+        {
+          "file": "apps/remote/src/index.css",
+          "hash": "8018059816398900387"
+        },
+        {
+          "file": "apps/remote/src/index.html",
+          "hash": "1575516999080719710"
+        },
+        {
+          "file": "apps/remote/src/index.js",
+          "hash": "876476442987263623"
+        }
+      ],
+      "vite-react-typescript-starter": [
+        {
+          "file": "apps/vitejs-vite-xso7t7/.eslintrc.cjs",
+          "hash": "18224317155734308275"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/README.md",
+          "hash": "11460966644741158790"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/_gitignore",
+          "hash": "13046175384202504187"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/index.html",
+          "hash": "4025202329384162906"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/package-lock.json",
+          "hash": "11817702317760164377"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/package.json",
+          "hash": "17036176460136569099"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/public/vite.svg",
+          "hash": "16046085400642193116"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/src/App.css",
+          "hash": "3739391659270974612"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/src/App.tsx",
+          "hash": "1637948135031643327"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/src/assets/react.svg",
+          "hash": "16069471864800376455"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/src/index.css",
+          "hash": "957896817323665666"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/src/main.tsx",
+          "hash": "12948679595907665671"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/src/vite-env.d.ts",
+          "hash": "12946363841406869089"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/tsconfig.json",
+          "hash": "9033773003937641934"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/tsconfig.node.json",
+          "hash": "6526340937590155196"
+        },
+        {
+          "file": "apps/vitejs-vite-xso7t7/vite.config.ts",
+          "hash": "7008402861428644331"
+        }
+      ],
       "@bronifty/marcs-observable": [
         {
           "file": "packages/marcs-observable/.gitignore",
@@ -56,51 +197,6 @@
         {
           "file": "packages/marcs-observable/vitest.config.ts",
           "hash": "7902325010388229437"
-        }
-      ],
-      "remote": [
-        {
-          "file": "apps/remote/.babelrc",
-          "hash": "8268513642698859463"
-        },
-        {
-          "file": "apps/remote/.gitignore",
-          "hash": "11904718991324175022"
-        },
-        {
-          "file": "apps/remote/package.json",
-          "hash": "3014260525062224209",
-          "deps": [
-            "@bronifty/marcs-observable"
-          ]
-        },
-        {
-          "file": "apps/remote/pnpm-lock.yaml",
-          "hash": "9511287153664696371"
-        },
-        {
-          "file": "apps/remote/rspack.config.js",
-          "hash": "10121962236778617115"
-        },
-        {
-          "file": "apps/remote/src/App.jsx",
-          "hash": "8603818085874879049"
-        },
-        {
-          "file": "apps/remote/src/RemoteCounter.jsx",
-          "hash": "16274637873788493305"
-        },
-        {
-          "file": "apps/remote/src/index.css",
-          "hash": "8018059816398900387"
-        },
-        {
-          "file": "apps/remote/src/index.html",
-          "hash": "1575516999080719710"
-        },
-        {
-          "file": "apps/remote/src/index.js",
-          "hash": "876476442987263623"
         }
       ],
       "host": [
@@ -202,39 +298,13 @@
         },
         {
           "file": "apps/web/tsconfig.tsbuildinfo",
-          "hash": "11381696128349722804"
+          "hash": "10164225948484834894"
         },
         {
           "file": "apps/web/vite.config.ts",
           "hash": "7008402861428644331"
         }
       ]
-    },
-    "nonProjectFiles": [
-      {
-        "file": ".gitignore",
-        "hash": "13978643129393047736"
-      },
-      {
-        "file": ".npmrc",
-        "hash": "15788482085624604926"
-      },
-      {
-        "file": "README.md",
-        "hash": "8617110355753970720"
-      },
-      {
-        "file": "package.json",
-        "hash": "3317919457956704386"
-      },
-      {
-        "file": "pnpm-lock.yaml",
-        "hash": "502470632099465028"
-      },
-      {
-        "file": "pnpm-workspace.yaml",
-        "hash": "9750177317466281158"
-      }
-    ]
+    }
   }
 }
